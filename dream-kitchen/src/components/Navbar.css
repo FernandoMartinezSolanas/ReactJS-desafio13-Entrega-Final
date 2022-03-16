@@ -1,0 +1,57 @@
+.navbar {
+  background: transparent;
+}
+
+.navbar.active {
+  background: white;
+  transition: ease-in 0.5s;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+a.nav-link {
+  color: black !important;
+  font-family: "jost";
+  font-size: 1.5rem;
+}
+
+.nav-item-cart {
+  margin-top: 10px;
+}
+
+.nav-item {
+  width: 75px;
+  text-align: center;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.navbar-light {
+  height: 68px;
+}
+
+.menumenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: #c7a667;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.dropdown:hover .menumenu {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  list-style-type: none;
+}
