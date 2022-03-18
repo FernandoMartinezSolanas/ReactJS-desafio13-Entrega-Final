@@ -1,0 +1,26 @@
+.newSection {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.servicio {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  justify-content: space-evenly;
+  border: black;
+  border-right: 0.5px;
+  border-right-style: solid;
+  border-left: 0.5px;
+  border-left-style: solid;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.servicio img {
+  width: 60px;
+}
