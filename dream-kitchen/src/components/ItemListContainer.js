@@ -10,6 +10,11 @@ function ItemCont() {
       <ItemProd />
       <ItemProd />
       <ItemProd />
+      <ItemProd />
+      <ItemProd />
+      <ItemProd />
+      <ItemProd />
+      <ItemProd />
     </div>
   );
 }
