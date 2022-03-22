@@ -1,19 +1,19 @@
 import React from "react";
 import image1 from "../images/porcelanato.jpg";
+import Itemcount from "./itemcount";
+import "./itemcount.css";
 
 function ItemProd() {
   return (
-    <div class="card">
-      <img src={image1} class="card-img-top" alt="Porcelanato" />
-      <div class="card-body">
-        <h5 class="card-title">Porcelanato</h5>
-        <p class="card-text">
+    <div className="card">
+      <img src={image1} className="card-img-top" alt="Porcelanato" />
+      <div className="card-body">
+        <h5 className="card-title">Porcelanato</h5>
+        <p className="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>
-        <a href="#" class="btn btn-primary">
-          Go somewhere
-        </a>
+        <Itemcount stock={5} initial={50} />
       </div>
     </div>
   );

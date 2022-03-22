@@ -21,12 +21,12 @@ function Navbar() {
           : "navbar fixed-top navbar-expand-lg navbar-light"
       }
     >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
           LOGO
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -34,44 +34,51 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="index.html"
+              >
                 Inicio
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="./pages/shop.html">
+            <li className="nav-item dropdown">
+              <a className="nav-link" href="./pages/shop.html">
                 Shop
               </a>
-              <ul class="menumenu">
-                <li class="menu">
+              <ul className="menumenu">
+                <li className="menu">
                   <a
-                    class="dropdown-item"
+                    className="dropdown-item"
                     href="./pages/nosotros.html#historia"
                   >
                     Porcelanatos
                   </a>
                 </li>
-                <li class="menu">
-                  <a class="dropdown-item" href="./pages/nosotros.html#calidad">
+                <li className="menu">
+                  <a
+                    className="dropdown-item"
+                    href="./pages/nosotros.html#calidad"
+                  >
                     Revestimientos
                   </a>
                 </li>
-                <li class="menu">
+                <li className="menu">
                   <a
-                    class="dropdown-item"
+                    className="dropdown-item"
                     href="./pages/nosotros.html#medioambiente"
                   >
                     Griferias
                   </a>
                 </li>
-                <li class="menu">
+                <li className="menu">
                   <a
-                    class="dropdown-item"
+                    className="dropdown-item"
                     href="./pages/nosotros.html#medioambiente"
                   >
                     Mesadas

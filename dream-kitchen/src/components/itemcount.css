@@ -1,0 +1,26 @@
+.Itemcount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 40px;
+  background-color: #c7a667;
+  border: #c7a667;
+}
+
+.addcart {
+  display: flex;
+  justify-content: center;
+}
+
+.add {
+  border-radius: 0.25rem;
+  background-color: transparent;
+  margin-top: 15px;
+  border: solid;
+  border-color: #c7a667;
+  border-width: 2px;
+  padding: 5px;
+}
