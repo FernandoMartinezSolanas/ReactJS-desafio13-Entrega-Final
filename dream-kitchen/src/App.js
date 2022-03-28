@@ -7,7 +7,7 @@ import Benefits from "./components/Benefits";
 import "./components/Benefits.css";
 import Products from "./components/Products";
 import "./components/Products.css";
-import ItemCont from "./components/ItemListContainer";
+import ItemListCont from "./components/ItemListContainer";
 import "./components/ItemListContainer.css";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <Section />
       <Benefits />
       <Products />
-      <ItemCont />
+      <ItemListCont />
     </div>
   );
 }
