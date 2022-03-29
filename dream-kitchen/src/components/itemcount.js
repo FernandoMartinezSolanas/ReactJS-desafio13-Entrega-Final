@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 function ItemCount(props) {
   const [count, setCount] = useState(1);
-  console.log(props.stock);
 
   const add = () => {
     if (count === props.stock) {
