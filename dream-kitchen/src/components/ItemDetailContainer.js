@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { listadoProductos } from "./listado";
 import ItemDetail from "./ItemDetail";
 import "./ItemDetail.css";
+import Spinner from "react-bootstrap/Spinner";
 
 const ItemDetailContainer = ({ id }) => {
   const [products, setProducts] = useState([]);
@@ -16,22 +17,23 @@ const ItemDetailContainer = ({ id }) => {
 
   useEffect(() => {
     getProducts().then((data) => {
-      setProducts(data.find((x) => x.id === id));
+      setProducts(data);
     });
-  }, [id]);
+  }, []);
+
+  const productfiltered = products.find((x) => x.id === id);
 
   return (
     <div>
-      {console.log(products)}
-      {products ? (
-        <ItemDetail data={products} />
+      {productfiltered ? (
+        <ItemDetail data={productfiltered} />
       ) : (
-        <p>Obteniendo producto...</p>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       )}
     </div>
   );
 };
 
 export default ItemDetailContainer;
-
-//{product ? <ItemDetail item={product} /> : <p>Obteniendo producto...</p>}
