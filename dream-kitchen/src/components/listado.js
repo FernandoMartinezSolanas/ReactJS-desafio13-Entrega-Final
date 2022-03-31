@@ -1,4 +1,13 @@
-const products = [
+import griferiaAugusta from "../images/griferia-augusta.jpg";
+import griferiaAromo from "../images/aromo.jpg";
+import ecowood from "../images/porcelanato-ecowood.jpeg";
+import evolution from "../images/porcelanato-evolution.jpg";
+import subwayBlanco from "../images/revestimiento-subway-blanco.jpg";
+import subwayNegro from "../images/revestimiento-subway-negro.jpg";
+import mesadaBlanca from "../images/mesada-blanca.jpg";
+import mesadaNegra from "../images/mesada-negra.jpg";
+
+export const listadoProductos = [
   {
     id: 1,
     title: "Augusta",

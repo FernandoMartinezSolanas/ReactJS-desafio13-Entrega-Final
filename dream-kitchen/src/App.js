@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import "./components/Products.css";
 import ItemListContainer from "./components/ItemListContainer";
 import "./components/ItemListContainer.css";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Benefits />
       <Products />
       <ItemListContainer />
+      <ItemDetailContainer id={3} />
     </div>
   );
 }
