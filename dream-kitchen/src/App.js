@@ -1,25 +1,20 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import "./components/Navbar.css";
-import Section from "./components/Section";
-import "./components/Section.css";
-import Benefits from "./components/Benefits";
-import "./components/Benefits.css";
-import Products from "./components/Products";
-import "./components/Products.css";
-import ItemListContainer from "./components/ItemListContainer";
-import "./components/ItemListContainer.css";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./components/pages/Home";
+import Shop from "./components/pages/Shop";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Section />
-      <Benefits />
-      <Products />
-      <ItemListContainer />
-      <ItemDetailContainer id={5} />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage></Homepage>}></Route>
+          <Route path="/shop" element={<Shop></Shop>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

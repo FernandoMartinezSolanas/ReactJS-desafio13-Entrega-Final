@@ -1,8 +1,8 @@
 import React from "react";
-import image1 from "../images/porcelanato.jpg";
-import image2 from "../images/revestimiento.jpg";
-import image3 from "../images/griferia.jpg";
-import image4 from "../images/mesadas.jpg";
+import image1 from "../../images/porcelanato.jpg";
+import image2 from "../../images/revestimiento.jpg";
+import image3 from "../../images/griferia.jpg";
+import image4 from "../../images/mesadas.jpg";
 
 function Products() {
   return (

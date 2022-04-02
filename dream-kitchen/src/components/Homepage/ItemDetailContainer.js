@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { listadoProductos } from "./listado";
-import ItemDetail from "./ItemDetail";
-import "./ItemDetail.css";
+import { listadoProductos } from "../listado";
+import ItemDetail from "../ItemDetail";
+import "../ItemDetail";
 import Spinner from "react-bootstrap/Spinner";
 
 const ItemDetailContainer = ({ id }) => {
