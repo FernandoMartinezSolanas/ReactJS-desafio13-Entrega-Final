@@ -6,7 +6,7 @@ function Section() {
     <div className="test">
       <h1>DREAM KITCHEN</h1>
       <Link to={"/shop"}>
-        <h2>Shop now</h2>
+        <h2 className="Shop">Shop now</h2>
       </Link>
     </div>
   );

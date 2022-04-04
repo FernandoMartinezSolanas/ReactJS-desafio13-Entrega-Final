@@ -33,4 +33,20 @@
   padding: 10px 0;
   font-family: "jost";
   font-weight: 600;
+  transition: 0.3s;
+}
+
+.prodTitle:hover {
+  filter: brightness(70%);
+}
+
+.prodTitle a {
+  text-decoration: none;
+  color: black;
+  background-color: #c7a667;
+  margin-top: 5px;
+  text-align: center;
+  padding: 10px 0;
+  font-family: "jost";
+  font-weight: 600;
 }

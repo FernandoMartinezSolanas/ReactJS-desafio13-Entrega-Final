@@ -28,7 +28,7 @@
   letter-spacing: 2px;
 }
 
-.test h2 {
+.Shop {
   border: black;
   border-style: solid;
   border-width: 1px;
@@ -42,4 +42,15 @@
 .test a {
   text-decoration: none;
   color: black;
+}
+
+.Shop:hover,
+.Shop:visited,
+.Shop:focus,
+.Shop:active {
+  border: #c7a667;
+  border-style: solid;
+  border-width: 1px;
+  color: #c7a667;
+  transition: 0.3s;
 }

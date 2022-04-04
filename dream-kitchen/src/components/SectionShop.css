@@ -1,0 +1,25 @@
+.testShop {
+  position: relative;
+  z-index: 1;
+  color: black;
+  width: 100%;
+  height: 500px;
+  padding-top: 160px;
+  background-image: url("../images/SectionShop.jpg"),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.73) 10%, rgba(0, 0, 0, 0) 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 500px;
+  background-blend-mode: overlay;
+}
+
+.ShopNow {
+  letter-spacing: 2px;
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  width: 300px;
+  margin: auto;
+  font-weight: 400;
+  text-align: center;
+  font-family: "Roboto Serif", sans-serif;
+}

@@ -1,14 +1,13 @@
 import React from "react";
-import Section from "../Homepage/Section";
 import "../Homepage/Section.css";
 import ItemListContainer from "../Homepage/ItemListContainer";
 import "../Homepage/ItemListContainer.css";
-import ItemCategoryContainer from "../ItemCategoryContainer";
+import SectionShop from "../SectionShop";
 
 const Shop = () => {
   return (
     <div>
-      <Section />
+      <SectionShop />
       <ItemListContainer></ItemListContainer>
     </div>
   );

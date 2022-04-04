@@ -14,7 +14,9 @@ function Products() {
             <img src={image1} alt="porcelanato" />
           </Link>
         </div>
-        <div className="prodTitle">PORCELANATOS</div>
+        <div className="prodTitle">
+          <Link to={"/porcelanato"}>PORCELANATOS</Link>
+        </div>
       </div>
       <div className="imageFit">
         <div className="imagenProd">
@@ -22,7 +24,9 @@ function Products() {
             <img src={image2} alt="revestimiento" />
           </Link>
         </div>
-        <div className="prodTitle">REVESTIMIENTOS</div>
+        <div className="prodTitle">
+          <Link to={"/revestimiento"}>REVESTIMIENTOS</Link>
+        </div>
       </div>
       <div className="imageFit">
         <div className="imagenProd">
@@ -30,7 +34,9 @@ function Products() {
             <img src={image3} alt="griferia" />
           </Link>
         </div>
-        <div className="prodTitle">GRIFERIAS</div>
+        <div className="prodTitle">
+          <Link to={"/griferia"}>GRIFERIAS</Link>
+        </div>
       </div>
       <div className="imageFit">
         <div className="imagenProd">
@@ -38,7 +44,9 @@ function Products() {
             <img src={image4} alt="mesadas" />
           </Link>
         </div>
-        <div className="prodTitle">MESADAS</div>
+        <div className="prodTitle">
+          <Link to={"/mesada"}>MESADAS</Link>
+        </div>
       </div>
     </section>
   );
