@@ -12,6 +12,11 @@
 .imagenProd img {
   width: 100%;
   height: 300px;
+  transition: 0.3s;
+}
+
+.imagenProd img:hover {
+  filter: brightness(70%);
 }
 
 .imageFit {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -22,9 +23,9 @@ function Navbar() {
       }
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link to={"/"} className="navbar-brand" href="#">
           LOGO
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -39,50 +40,39 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
+              <Link
+                to={"/"}
                 className="nav-link active"
                 aria-current="page"
                 href="index.html"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="./pages/shop.html">
+              <Link to={"/shop"} className="nav-link" href="./pages/shop.html">
                 Shop
-              </a>
+              </Link>
               <ul className="menumenu">
                 <li className="menu">
-                  <a
-                    className="dropdown-item"
-                    href="./pages/nosotros.html#historia"
-                  >
+                  <Link to={"/porcelanato"} className="dropdown-item">
                     Porcelanatos
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu">
-                  <a
-                    className="dropdown-item"
-                    href="./pages/nosotros.html#calidad"
-                  >
+                  <Link to={"/revestimiento"} className="dropdown-item">
                     Revestimientos
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu">
-                  <a
-                    className="dropdown-item"
-                    href="./pages/nosotros.html#medioambiente"
-                  >
+                  <Link to={"/griferia"} className="dropdown-item">
                     Griferias
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu">
-                  <a
-                    className="dropdown-item"
-                    href="./pages/nosotros.html#medioambiente"
-                  >
+                  <Link to={"/mesada"} className="dropdown-item">
                     Mesadas
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>

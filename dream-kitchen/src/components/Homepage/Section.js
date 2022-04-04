@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Section() {
   return (
     <div className="test">
       <h1>DREAM KITCHEN</h1>
-      <a href="./pages/shop.html">
+      <Link to={"/shop"}>
         <h2>Shop now</h2>
-      </a>
+      </Link>
     </div>
   );
 }

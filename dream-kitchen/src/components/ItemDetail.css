@@ -1,0 +1,48 @@
+.cardDetail {
+  width: 100%;
+  display: flex;
+}
+
+.card-img-top-detail {
+  margin-right: 75px;
+  width: 500px;
+  height: 500px;
+}
+
+.card-body-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Roboto Serif", sans-serif;
+  text-align: left;
+  border: black;
+  width: auto;
+}
+
+.card-title-detail {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.card-text-price-detail {
+  color: #c7a667;
+  font-family: "Roboto Serif", sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.card-text-tarjeta-detail {
+  font-family: "Roboto Serif", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.card-text-detail {
+  font-family: "Roboto Serif", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}

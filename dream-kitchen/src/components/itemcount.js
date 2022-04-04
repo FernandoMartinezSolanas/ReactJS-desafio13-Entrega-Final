@@ -34,7 +34,7 @@ function ItemCount(props) {
       </div>
       <div className="addcart">
         <button onClick={onAdd} className="add">
-          Agregar al carrito
+          🛒 Añadir al carrito
         </button>
       </div>
     </div>
