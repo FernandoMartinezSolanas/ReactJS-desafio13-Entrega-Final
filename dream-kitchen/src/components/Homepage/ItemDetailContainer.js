@@ -9,7 +9,6 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
   const { id } = useParams();
-  console.log(id);
 
   const getProducts = () => {
     return new Promise((resolve, reject) => {

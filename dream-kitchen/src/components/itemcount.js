@@ -19,6 +19,7 @@ function ItemCount(props) {
 
   const onAdd = () => {
     alert(count + " items fueron agregados a tu carrito");
+    props.addToCart(count);
   };
 
   return (

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Itemcount from "./itemcount";
 import "./itemcount.css";
 import { Link } from "react-router-dom";
 
 function Item({ data }) {
   const { id, title, price, stock, picture, category } = data;
+  const [productAdded, SetproductAdded] = useState(0);
+  const addProduct = (quantity) => {
+    SetproductAdded(quantity + productAdded);
+  };
+  console.log(productAdded);
+
   return (
     <div className="card">
       <img src={picture} className="card-img-top" alt={picture} />
@@ -14,7 +20,7 @@ function Item({ data }) {
         <Link to={`/productos/${id}`} className="card-text-anchor">
           Ver detalle
         </Link>
-        <Itemcount stock={stock} initial={1} />
+        <Itemcount stock={stock} initial={1} addToCart={addProduct} />
       </div>
     </div>
   );
