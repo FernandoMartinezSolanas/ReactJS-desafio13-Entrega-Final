@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -23,9 +23,9 @@ function Navbar() {
       }
     >
       <div className="container-fluid">
-        <Link to={"/"} className="navbar-brand" href="#">
+        <NavLink to={"/"} className="navbar-brand" href="#">
           LOGO
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -40,39 +40,38 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                to={"/"}
-                className="nav-link active"
-                aria-current="page"
-                href="index.html"
-              >
+              <NavLink to={"/"} className="nav-link active" aria-current="page">
                 Inicio
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
-              <Link to={"/shop"} className="nav-link" href="./pages/shop.html">
+              <NavLink
+                to={"/shop"}
+                className="nav-link"
+                href="./pages/shop.html"
+              >
                 Shop
-              </Link>
+              </NavLink>
               <ul className="menumenu">
                 <li className="menu">
-                  <Link to={"/porcelanato"} className="dropdown-item">
+                  <NavLink to={"/porcelanato"} className="dropdown-item">
                     Porcelanatos
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="menu">
-                  <Link to={"/revestimiento"} className="dropdown-item">
+                  <NavLink to={"/revestimiento"} className="dropdown-item">
                     Revestimientos
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="menu">
-                  <Link to={"/griferia"} className="dropdown-item">
+                  <NavLink to={"/griferia"} className="dropdown-item">
                     Griferias
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="menu">
-                  <Link to={"/mesada"} className="dropdown-item">
+                  <NavLink to={"/mesada"} className="dropdown-item">
                     Mesadas
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </li>

@@ -20,7 +20,6 @@ const ItemDetail = ({ data }) => {
           💳 12 Cuotas sin interes de {Math.round(price / 12)}
         </p>
         <p className="card-text-detail">Descripcion: {description}</p>
-
         <Itemcount stock={stock} initial={1} addToCart={addProduct} />
       </div>
     </div>
