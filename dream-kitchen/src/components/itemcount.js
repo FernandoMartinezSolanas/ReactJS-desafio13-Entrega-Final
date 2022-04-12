@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import WidgetContext from "../context/widgetcontext";
 
 function ItemCount(props) {
   const [count, setCount] = useState(1);
+  const { handleShow } = useContext(WidgetContext);
 
   const add = () => {
     if (count === props.stock) {
@@ -18,8 +20,8 @@ function ItemCount(props) {
   };
 
   const onAdd = () => {
-    alert(count + " items fueron agregados a tu carrito");
     props.addToCart(count);
+    handleShow();
   };
 
   return (

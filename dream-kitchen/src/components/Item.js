@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Itemcount from "./itemcount";
 import "./itemcount.css";
 import { Link } from "react-router-dom";
+import CartContext from "../context/cartcontext";
 
 function Item({ data }) {
   const { id, title, price, stock, picture, category } = data;
   const [productAdded, SetproductAdded] = useState(0);
+
+  const { addProductToCart } = useContext(CartContext);
   const addProduct = (quantity) => {
     SetproductAdded(quantity + productAdded);
+    addProductToCart(data);
   };
-  console.log(productAdded);
 
   return (
     <div className="card">

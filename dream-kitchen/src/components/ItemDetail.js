@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Itemcount from "./itemcount";
 import "./ItemDetail.css";
+import CartContext from "../context/cartcontext";
 
 const ItemDetail = ({ data }) => {
   const { id, title, description, price, picture, stock } = data;
   const [productAdded, SetproductAdded] = useState(0);
+  const { addProductToCart } = useContext(CartContext);
+
   const addProduct = (quantity) => {
     SetproductAdded(quantity + productAdded);
+    addProductToCart(data);
   };
-  console.log(productAdded);
 
   return (
     <div className="cardDetail">

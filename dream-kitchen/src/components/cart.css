@@ -1,0 +1,114 @@
+.CartItem {
+  display: flex;
+  padding: 10px 0;
+  transition: 500ms;
+}
+
+.CartItem:hover {
+  margin-right: 50px;
+}
+
+.CartItem:hover .CartButtonDelete {
+  visibility: visible;
+}
+
+.CartImage {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.CartTitlePriceCont {
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.CartButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.CartButtonRest {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #eeeeee;
+  transition: 500ms;
+  font-weight: 600;
+}
+
+.CartButtonQty {
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: rgba(201, 185, 185, 0.849);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.CartButtonAdd {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #eeeeee;
+  transition: 500ms;
+  font-weight: 600;
+}
+
+.CartButtonAdd:hover {
+  background-color: rgba(201, 185, 185, 0.849);
+}
+
+.CartButtonRest:hover {
+  background-color: rgba(201, 185, 185, 0.849);
+}
+
+.CartButtonDelete {
+  visibility: hidden;
+  font-size: 24px;
+  font-weight: 600;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.CartTotal {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.CartTotalPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.CartTotalBuy {
+  background-color: white;
+  border-style: solid;
+  margin: 20px 0;
+  border-color: black;
+  border-width: 2px;
+  padding: 5px 0;
+  font-family: "Raleway";
+  font-weight: 600;
+}
+
+.CartTotalKeepLooking {
+  font-family: "Raleway";
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  font-size: 13px;
+}

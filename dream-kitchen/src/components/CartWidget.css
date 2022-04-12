@@ -1,8 +1,8 @@
-.nav-item-cart {
-  margin-top: 10px;
+.offcanvas-header {
+  background-color: #eeeeee;
+  font-family: "Raleway";
 }
 
-.nav-item {
-  width: 75px;
-  text-align: center;
+.containerCarrito svg {
+  cursor: pointer;
 }

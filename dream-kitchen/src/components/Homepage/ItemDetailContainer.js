@@ -31,9 +31,11 @@ const ItemDetailContainer = () => {
       {productfiltered ? (
         <ItemDetail data={productfiltered} />
       ) : (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        <div className="Spinner">
+          <Spinner animation="grow" variant="secondary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
       )}
     </div>
   );
