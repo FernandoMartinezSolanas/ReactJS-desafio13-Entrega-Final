@@ -4,6 +4,7 @@ import Cart from "./cart";
 import "./CartWidget.css";
 import CartContext from "../context/cartcontext";
 import WidgetContext from "../context/widgetcontext";
+import { Link } from "react-router-dom";
 
 function CartWidget() {
   const { WidgetShow, handleClose, handleShow } = useContext(WidgetContext);
@@ -45,9 +46,11 @@ function CartWidget() {
               <div>Total</div>
               <div>{total}</div>
             </div>
-            <button className="CartTotalBuy">COMPRAR</button>
+            <button className="CartTotalBuy">
+              <Link to={`/checkout`}>COMPRAR</Link>
+            </button>
             <button className="CartTotalKeepLooking" onClick={handleClose}>
-              SEGUIR VIENDO
+              <Link to={`/`}>SEGUIR VIENDO</Link>
             </button>
           </div>
         </Offcanvas.Body>

@@ -1,0 +1,161 @@
+.CheckoutDetailTotal {
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 25px;
+  margin-right: 185px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
+.CheckoutDetailTotalTitle {
+  margin-right: 20px;
+}
+
+.Container {
+  margin-top: 100px;
+}
+
+.FinCompra {
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  padding: 5px 0;
+  font-family: "Raleway";
+  width: 500px;
+}
+
+.FinCompra button {
+  background-color: white;
+  border-style: none;
+  font-weight: 700;
+}
+
+.CheckoutItem {
+  display: flex;
+  padding: 10px 0;
+  transition: 500ms;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1em;
+}
+
+.CheckoutItem:hover {
+  margin-right: 50px;
+}
+
+.CheckoutItem:hover .CheckoutButtonDelete {
+  visibility: visible;
+}
+
+.CheckoutImage {
+  width: 125px;
+  height: 125px;
+  margin-right: 10px;
+}
+
+.CheckoutTitlePriceCont {
+  display: flex;
+  flex-direction: row;
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 25px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.CheckoutButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.CheckoutButtonRest {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #eeeeee;
+  transition: 500ms;
+  font-weight: 600;
+}
+
+.CheckoutButtonQty {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: rgba(201, 185, 185, 0.849);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.CheckoutButtonAdd {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #eeeeee;
+  transition: 500ms;
+  font-weight: 600;
+}
+
+.CheckoutButtonAdd:hover {
+  background-color: rgba(201, 185, 185, 0.849);
+}
+
+.CheckoutButtonRest:hover {
+  background-color: rgba(201, 185, 185, 0.849);
+}
+
+.CheckoutButtonDelete {
+  visibility: hidden;
+  font-size: 24px;
+  font-weight: 600;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.CheckoutTotal {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.CheckoutTotalPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.CheckoutTotalBuy {
+  background-color: white;
+  border-style: solid;
+  margin: 20px 0;
+  border-color: black;
+  border-width: 2px;
+  padding: 5px 0;
+  font-family: "Raleway";
+  font-weight: 600;
+}
+
+.CheckoutTotalKeepLooking {
+  font-family: "Raleway";
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  font-size: 13px;
+}

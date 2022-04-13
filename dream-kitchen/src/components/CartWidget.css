@@ -6,3 +6,11 @@
 .containerCarrito svg {
   cursor: pointer;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
