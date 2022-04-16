@@ -3,11 +3,20 @@ import CartContext from "../../context/cartcontext";
 import "./CheckoutDetail.css";
 
 const CheckoutDetail = () => {
-  const { cartProducts, deleteProduct } = useContext(CartContext);
+  const { cartProducts, deleteProduct, reducequantity, increasequantity } =
+    useContext(CartContext);
 
   return cartProducts.map((cartProduct) => {
     const del = () => {
       deleteProduct(cartProduct);
+    };
+
+    const Reduce = () => {
+      reducequantity(cartProduct);
+    };
+
+    const Increase = () => {
+      increasequantity(cartProduct);
     };
 
     return (
@@ -19,11 +28,18 @@ const CheckoutDetail = () => {
             <div className="CheckoutPrice">${cartProduct.price}</div>
           </div>
           <div className="CheckoutButtons">
-            <div className="CheckoutButtonRest">-</div>
-            <div className="CheckoutButtonQty">1</div>
-            <div className="CheckoutButtonAdd">+</div>
+            <div className="CheckoutButtonRest" onClick={Reduce}>
+              -
+            </div>
+            <div className="CheckoutButtonQty">{cartProduct.quantity}</div>
+            <div className="CheckoutButtonAdd" onClick={Increase}>
+              +
+            </div>
             <div className="CheckoutButtonDelete" onClick={del}>
               X
+            </div>
+            <div className="CheckoutPrice">
+              ${cartProduct.price * cartProduct.quantity}
             </div>
           </div>
         </div>

@@ -19,10 +19,30 @@ const CartProvider = ({ children }) => {
     );
   };
 
+  const reducequantity = (product) => {
+    setcartProducts(
+      cartProducts.map((e) =>
+        e.id === product.id && product.quantity >= 1
+          ? { ...e, quantity: product.quantity - 1 }
+          : e
+      )
+    );
+  };
+
+  const increasequantity = (product) => {
+    setcartProducts(
+      cartProducts.map((e) =>
+        e.id === product.id && product.quantity >= 1
+          ? { ...e, quantity: product.quantity + 1 }
+          : e
+      )
+    );
+  };
+
   const calculeTotalPrice = () => {
     let total = 0;
     cartProducts.map((cartProduct) => {
-      total = cartProduct.price + total;
+      total = cartProduct.price * cartProduct.quantity + total;
     });
 
     return total;
@@ -33,6 +53,8 @@ const CartProvider = ({ children }) => {
     addProductToCart,
     deleteProduct,
     calculeTotalPrice,
+    reducequantity,
+    increasequantity,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
