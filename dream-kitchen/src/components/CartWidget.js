@@ -47,7 +47,9 @@ function CartWidget() {
               <div>{total}</div>
             </div>
             <button className="CartTotalBuy">
-              <Link to={`/checkout`}>COMPRAR</Link>
+              <Link to={`/checkout`} onClick={handleClose}>
+                COMPRAR
+              </Link>
             </button>
             <button className="CartTotalKeepLooking" onClick={handleClose}>
               <Link to={`/`}>SEGUIR VIENDO</Link>
