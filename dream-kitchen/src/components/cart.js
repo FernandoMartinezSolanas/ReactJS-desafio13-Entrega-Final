@@ -22,7 +22,10 @@ const Cart = () => {
     return (
       <div key={cartProduct.id}>
         <div className="CartItem">
-          <img src={cartProduct.picture} className="CartImage" />
+          <img
+            src={`/ReactJS-desafio11/images/${cartProduct.image}`}
+            className="CartImage"
+          />
           <div className="CartTitlePriceCont">
             <div className="CartTitle">{cartProduct.title}</div>
             <div className="CartPrice">${cartProduct.price}</div>

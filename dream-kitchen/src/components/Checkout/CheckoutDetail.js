@@ -18,11 +18,13 @@ const CheckoutDetail = () => {
     const Increase = () => {
       increasequantity(cartProduct);
     };
-
     return (
       <div key={cartProduct.id}>
         <div className="CheckoutItem">
-          <img src={cartProduct.picture} className="CheckoutImage" />
+          <img
+            src={`/ReactJS-desafio11/images/${cartProduct.image}`}
+            className="CheckoutImage"
+          />
           <div className="CheckoutTitlePriceCont">
             <div className="CheckoutTitle">{cartProduct.title}</div>
             <div className="CheckoutPrice">${cartProduct.price}</div>

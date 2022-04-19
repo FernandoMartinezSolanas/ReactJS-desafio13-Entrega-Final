@@ -1,35 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { listadoProductos } from "../listado";
 import ItemDetail from "../ItemDetail";
 import "../ItemDetail.css";
 import Spinner from "react-bootstrap/Spinner";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const ItemDetailContainer = () => {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const { id } = useParams();
 
-  const getProducts = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        return resolve(listadoProductos);
-      }, 2000);
-    });
+  const getProduct = async () => {
+    const docRef = doc(db, "productos", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      let product = docSnap.data();
+      product.id = docSnap.id;
+      setProduct(product);
+    } else {
+      console.log("No such document!");
+    }
   };
 
   useEffect(() => {
-    getProducts().then((data) => {
-      setProducts(data);
-    });
-  }, [id]); /*LE agregue el ID*/
-
-  const productfiltered = products.find((x) => x.id == id);
+    getProduct();
+  }, [id]);
 
   return (
     <div className="ItemDetailContainer">
-      {productfiltered ? (
-        <ItemDetail data={productfiltered} />
+      {product ? (
+        <ItemDetail data={product} />
       ) : (
         <div className="Spinner">
           <Spinner animation="grow" variant="secondary" role="status">

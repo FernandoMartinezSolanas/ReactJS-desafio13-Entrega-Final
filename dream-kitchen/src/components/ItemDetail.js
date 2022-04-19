@@ -4,19 +4,21 @@ import "./ItemDetail.css";
 import CartContext from "../context/cartcontext";
 
 const ItemDetail = ({ data }) => {
-  const { id, title, description, price, picture, stock } = data;
-  //const [productAdded, SetproductAdded] = useState(0);
+  const { id, title, description, price, picture, stock, image } = data;
   const { addProductToCart } = useContext(CartContext);
 
   const addProduct = (quantity) => {
-    //    SetproductAdded(quantity + productAdded);
     data.quantity = quantity;
     addProductToCart(data);
   };
 
   return (
     <div className="cardDetail">
-      <img src={picture} className="card-img-top-detail" alt={picture} />
+      <img
+        src={`/ReactJS-desafio11/images/${image}`}
+        className="card-img-top-detail"
+        alt={picture}
+      />
       <div className="card-body-detail">
         <h5 className="card-title-detail">{title}</h5>
         <p className="card-text-price-detail">PRECIO: ARS $ {price}</p>

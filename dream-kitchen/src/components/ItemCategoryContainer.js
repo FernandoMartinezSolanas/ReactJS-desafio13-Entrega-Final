@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { listadoProductos } from "./listado";
-import Spinner from "react-bootstrap/Spinner";
 import { useParams } from "react-router-dom";
 import Item from "./Item";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 const ItemCategoryContainer = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
-  console.log(category);
 
-  const getProducts = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        return resolve(listadoProductos);
-      }, 2000);
+  const getProducts = async () => {
+    const itemscollection = collection(db, "productos");
+    const productsSnapshot = await getDocs(itemscollection);
+    const productList = productsSnapshot.docs.map((doc) => {
+      let product = doc.data();
+      product.id = doc.id;
+      return product;
     });
+    return productList;
   };
 
   useEffect(() => {
@@ -24,7 +26,6 @@ const ItemCategoryContainer = () => {
   }, [category]); /*LE agregue la CATEGORIA*/
 
   const productfiltered = products.filter((x) => x.category === category);
-  console.log(productfiltered);
 
   return (
     <div className="ListCont">

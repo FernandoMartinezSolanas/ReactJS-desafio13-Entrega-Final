@@ -5,19 +5,20 @@ import { Link } from "react-router-dom";
 import CartContext from "../context/cartcontext";
 
 function Item({ data }) {
-  const { id, title, price, stock, picture, category } = data;
-  //  const [productAdded, SetproductAdded] = useState(0);
-
+  const { id, title, price, stock, picture, category, image } = data;
   const { addProductToCart } = useContext(CartContext);
   const addProduct = (quantity) => {
-    //    SetproductAdded(quantity + productAdded);
     data.quantity = quantity;
     addProductToCart(data);
   };
 
   return (
     <div className="card">
-      <img src={picture} className="card-img-top" alt={picture} />
+      <img
+        src={`/ReactJS-desafio11/images/${image}`}
+        className="card-img-top"
+        alt={picture}
+      />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">PRECIO: ARS$ {price}</p>
