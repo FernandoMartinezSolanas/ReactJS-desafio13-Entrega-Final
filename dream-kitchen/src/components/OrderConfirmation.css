@@ -1,0 +1,8 @@
+.CloseButton {
+  width: 200px;
+}
+
+.CloseButton a {
+  color: white;
+  text-decoration: none;
+}

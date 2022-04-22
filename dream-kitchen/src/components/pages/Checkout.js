@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState } from "react";
 import CheckoutDetail from "../Checkout/CheckoutDetail";
 import CartContext from "../../context/cartcontext";
 import Form from "react-bootstrap/Form";
@@ -7,6 +7,7 @@ import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
 import OrderConfirmationForm from "../OrderConfirmation";
 import ModalContext from "../../context/modalcontext";
+import ScrollIntoView from "react-scroll-into-view";
 
 const Checkout = () => {
   const { cartProducts, calculeTotalPrice } = useContext(CartContext);
@@ -55,12 +56,6 @@ const Checkout = () => {
     setOrderNumber(orderDoc.id);
   };
 
-  //  const titleRef = useRef();
-
-  //function handleClick() {
-  //  titleRef.current.scrollIntoView({ behavior: "smooth" });
-  // }
-
   return (
     <div className="Container">
       <CheckoutDetail></CheckoutDetail>
@@ -69,9 +64,14 @@ const Checkout = () => {
         <div>${total}</div>
       </div>
       <div className="FinCompra">
-        <button onClick={() => setShowForm(true)}>FINALIZAR COMPRA</button>
+        <ScrollIntoView selector="#footer">
+          <button onClick={() => setShowForm(true)}>FINALIZAR COMPRA</button>
+        </ScrollIntoView>
       </div>
-      <div className={ShowForm ? "OrderForm-Show" : "OrderForm-NoShow"}>
+      <div
+        id="footer"
+        className={ShowForm ? "OrderForm-Show" : "OrderForm-NoShow"}
+      >
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre y Apellido</Form.Label>
@@ -113,7 +113,6 @@ const Checkout = () => {
           </Button>
         </Form>
         <OrderConfirmationForm ordernumber={OrderNumber} />
-        <div></div>
       </div>
     </div>
   );

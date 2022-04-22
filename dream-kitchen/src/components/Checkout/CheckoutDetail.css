@@ -43,7 +43,6 @@
   transition: 500ms;
   margin-left: 25px;
   margin-right: 25px;
-  margin-top: 20px;
   border-bottom-style: solid;
   border-bottom-width: 0.1em;
 }
@@ -175,19 +174,26 @@
   width: 50%;
   margin: 0 auto;
   margin-top: 30px;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .OrderForm-NoShow {
-  visibility: hidden;
+  visibility: visible;
   padding: 20px;
   border: 1px;
   border-style: solid;
-  display: none;
+  display: block;
   width: 50%;
   margin: 0 auto;
   margin-top: 30px;
+  opacity: 0;
 }
 
 .btn-primary-form {
   width: 100%;
+}
+.btn-primary-form:hover {
+  width: 100%;
+  background-color: #565e64;
 }
