@@ -165,3 +165,29 @@
   font-weight: 600;
   font-size: 25px;
 }
+
+.OrderForm-Show {
+  visibility: visible;
+  padding: 20px;
+  border: 1px;
+  border-style: solid;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.OrderForm-NoShow {
+  visibility: hidden;
+  padding: 20px;
+  border: 1px;
+  border-style: solid;
+  display: none;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.btn-primary-form {
+  width: 100%;
+}

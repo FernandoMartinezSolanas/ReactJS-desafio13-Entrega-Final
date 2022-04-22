@@ -1,10 +1,65 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef } from "react";
 import CheckoutDetail from "../Checkout/CheckoutDetail";
 import CartContext from "../../context/cartcontext";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
+import OrderConfirmationForm from "../OrderConfirmation";
+import ModalContext from "../../context/modalcontext";
 
 const Checkout = () => {
   const { cartProducts, calculeTotalPrice } = useContext(CartContext);
   const total = calculeTotalPrice();
+  const [ShowForm, setShowForm] = useState(false);
+  const [OrderNumber, setOrderNumber] = useState();
+  const { handleShow } = useContext(ModalContext);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+  const [order, setOrder] = useState({
+    buyer: formData,
+    items: cartProducts.map((cartProduct) => {
+      return {
+        id: cartProduct.id,
+        title: cartProduct.title,
+        price: cartProduct.price,
+      };
+    }),
+    total: total,
+  });
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    let prevOrder = { ...order, buyer: formData };
+    e.preventDefault();
+    setOrder({ ...order, buyer: formData });
+    pushOrder(prevOrder);
+  };
+
+  const pushOrder = async (prevOrder) => {
+    const orderFirebase = collection(db, "ordenes");
+    const orderDoc = await addDoc(orderFirebase, prevOrder);
+    setOrderNumber(orderDoc.id);
+  };
+
+  //  const titleRef = useRef();
+
+  //function handleClick() {
+  //  titleRef.current.scrollIntoView({ behavior: "smooth" });
+  // }
 
   return (
     <div className="Container">
@@ -14,7 +69,51 @@ const Checkout = () => {
         <div>${total}</div>
       </div>
       <div className="FinCompra">
-        <button>FINALIZAR COMPRA</button>
+        <button onClick={() => setShowForm(true)}>FINALIZAR COMPRA</button>
+      </div>
+      <div className={ShowForm ? "OrderForm-Show" : "OrderForm-NoShow"}>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Nombre y Apellido</Form.Label>
+            <Form.Control
+              type="text"
+              name="name"
+              placeholder="Nombre y Apellido"
+              onChange={handleChange}
+              value={formData.name}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              placeholder="email"
+              onChange={handleChange}
+              value={formData.email}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Telefono</Form.Label>
+            <Form.Control
+              type="number"
+              name="phone"
+              placeholder="Telefono"
+              onChange={handleChange}
+              value={formData.phone}
+            />
+          </Form.Group>
+          <Button
+            className="btn-primary-form"
+            variant="primary"
+            type="submit"
+            onClick={handleShow}
+          >
+            CONFIRMAR COMPRA
+          </Button>
+        </Form>
+        <OrderConfirmationForm ordernumber={OrderNumber} />
+        <div></div>
       </div>
     </div>
   );

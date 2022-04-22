@@ -22,7 +22,7 @@ const CheckoutDetail = () => {
       <div key={cartProduct.id}>
         <div className="CheckoutItem">
           <img
-            src={`/ReactJS-desafio11/images/${cartProduct.image}`}
+            src={`/ReactJS-desafio12/images/${cartProduct.image}`}
             className="CheckoutImage"
           />
           <div className="CheckoutTitlePriceCont">

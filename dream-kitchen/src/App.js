@@ -9,29 +9,32 @@ import Checkout from "./components/pages/Checkout";
 import ShopCategory from "./components/pages/ShopCategory";
 import { CartProvider } from "./context/cartcontext";
 import { WidgetProvider } from "./context/widgetcontext";
+import { ModalProvider } from "./context/modalcontext";
 
 function App() {
   return (
     <div>
       <WidgetProvider>
-        <CartProvider>
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Homepage></Homepage>}></Route>
-              <Route path="/shop" element={<Shop></Shop>}></Route>
-              <Route path="/checkout" element={<Checkout></Checkout>}></Route>
-              <Route
-                path="/:category"
-                element={<ShopCategory></ShopCategory>}
-              ></Route>
-              <Route
-                path="/productos/:id"
-                element={<ItemDetailContainer />}
-              ></Route>
-            </Routes>
-          </BrowserRouter>
-        </CartProvider>
+        <ModalProvider>
+          <CartProvider>
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Homepage></Homepage>}></Route>
+                <Route path="/shop" element={<Shop></Shop>}></Route>
+                <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+                <Route
+                  path="/:category"
+                  element={<ShopCategory></ShopCategory>}
+                ></Route>
+                <Route
+                  path="/productos/:id"
+                  element={<ItemDetailContainer />}
+                ></Route>
+              </Routes>
+            </BrowserRouter>
+          </CartProvider>
+        </ModalProvider>
       </WidgetProvider>
     </div>
   );

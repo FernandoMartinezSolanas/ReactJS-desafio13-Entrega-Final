@@ -13,7 +13,6 @@ function ItemList() {
     const productList = productsSnapshot.docs.map((doc) => {
       let product = doc.data();
       product.id = doc.id;
-      console.log(product);
       return product;
     });
     return productList;
