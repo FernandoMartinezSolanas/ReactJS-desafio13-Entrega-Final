@@ -2,7 +2,7 @@ import React from "react";
 import "../Homepage/Section.css";
 import ItemListContainer from "../Homepage/ItemListContainer";
 import "../Homepage/ItemListContainer.css";
-import SectionShop from "../SectionShop";
+import SectionShop from "../SectionShop/SectionShop";
 
 const Shop = () => {
   return (
