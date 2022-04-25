@@ -15,7 +15,7 @@ const ItemDetail = ({ data }) => {
   return (
     <div className="cardDetail">
       <img
-        src={`/ReactJS-desafio11/images/${image}`}
+        src={`/images/${image}`}
         className="card-img-top-detail"
         alt={picture}
       />

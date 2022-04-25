@@ -21,10 +21,7 @@ const CheckoutDetail = () => {
     return (
       <div key={cartProduct.id}>
         <div className="CheckoutItem">
-          <img
-            src={`/ReactJS-desafio12/images/${cartProduct.image}`}
-            className="CheckoutImage"
-          />
+          <img src={`/images/${cartProduct.image}`} className="CheckoutImage" />
           <div className="CheckoutTitlePriceCont">
             <div className="CheckoutTitle">{cartProduct.title}</div>
             <div className="CheckoutPrice">${cartProduct.price}</div>

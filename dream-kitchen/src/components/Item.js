@@ -14,11 +14,7 @@ function Item({ data }) {
 
   return (
     <div className="card">
-      <img
-        src={`/ReactJS-desafio12/images/${image}`}
-        className="card-img-top"
-        alt={picture}
-      />
+      <img src={`/images/${image}`} className="card-img-top" alt={picture} />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">PRECIO: ARS$ {price}</p>
