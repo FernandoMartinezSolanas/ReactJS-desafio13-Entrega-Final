@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
-import Itemcount from "./itemcount";
+import React, { useContext } from "react";
+import Itemcount from "../ItemCount/itemcount";
 import "./ItemDetail.css";
-import CartContext from "../context/cartcontext";
+import CartContext from "../../context/cartcontext";
 
 const ItemDetail = ({ data }) => {
-  const { id, title, description, price, picture, stock, image } = data;
+  const { title, description, price, picture, stock, image } = data;
   const { addProductToCart } = useContext(CartContext);
 
   const addProduct = (quantity) => {

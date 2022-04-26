@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import WidgetContext from "../context/widgetcontext";
+import WidgetContext from "../../context/widgetcontext";
 
 function ItemCount(props) {
   const [count, setCount] = useState(1);

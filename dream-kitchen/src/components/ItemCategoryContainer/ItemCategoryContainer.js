@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Item from "./Item";
-import "./Item.css";
+import { useParams } from "react-router-dom";
+import Item from "../Item/Item";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebase";
+import { db } from "../Firebase/firebase";
 
-function ItemList() {
+const ItemCategoryContainer = () => {
   const [products, setProducts] = useState([]);
+  const { category } = useParams();
 
   const getProducts = async () => {
     const itemscollection = collection(db, "productos");
@@ -22,16 +23,18 @@ function ItemList() {
     getProducts().then((data) => {
       setProducts(data);
     });
-  }, []);
+  }, [category]);
+
+  const productfiltered = products.filter((x) => x.category === category);
 
   return (
     <div className="ListCont">
-      {products.map((product) => {
+      {productfiltered.map((product) => {
         const { id } = product;
         return <Item data={product} key={id} />;
       })}
     </div>
   );
-}
+};
 
-export default ItemList;
+export default ItemCategoryContainer;

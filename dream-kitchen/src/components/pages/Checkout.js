@@ -3,9 +3,9 @@ import CheckoutDetail from "../Checkout/CheckoutDetail";
 import CartContext from "../../context/cartcontext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { db } from "../firebase";
+import { db } from "../Firebase/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import OrderConfirmationForm from "../OrderConfirmation";
+import OrderConfirmationForm from "../OrderConfirmation/OrderConfirmation";
 import ModalContext from "../../context/modalcontext";
 import ScrollIntoView from "react-scroll-into-view";
 

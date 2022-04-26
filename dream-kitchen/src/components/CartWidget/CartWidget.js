@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Cart from "./cart";
+import Cart from "../Cart/cart";
 import "./CartWidget.css";
-import CartContext from "../context/cartcontext";
-import WidgetContext from "../context/widgetcontext";
+import CartContext from "../../context/cartcontext";
+import WidgetContext from "../../context/widgetcontext";
 import { Link } from "react-router-dom";
 
 function CartWidget() {

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import ModalContext from "../context/modalcontext";
+import ModalContext from "../../context/modalcontext";
 import "./OrderConfirmation.css";
 import { Link } from "react-router-dom";
 
