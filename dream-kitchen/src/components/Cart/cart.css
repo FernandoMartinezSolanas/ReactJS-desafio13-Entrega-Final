@@ -88,13 +88,32 @@
   flex-direction: column;
 }
 
-.CartTotalPrice {
+.CartTotalPrice-show {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.CartTotalBuy {
+.CartTotalPrice-hidden {
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.CartTotalBuy-show {
+  background-color: white;
+  border-style: solid;
+  margin: 20px 0;
+  border-color: black;
+  border-width: 2px;
+  padding: 5px 0;
+  font-family: "Raleway";
+  font-weight: 600;
+}
+
+.CartTotalBuy-hidden {
+  visibility: hidden;
   background-color: white;
   border-style: solid;
   margin: 20px 0;

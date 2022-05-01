@@ -14,7 +14,7 @@ const Checkout = () => {
   const total = calculeTotalPrice();
   const [ShowForm, setShowForm] = useState(false);
   const [OrderNumber, setOrderNumber] = useState();
-  const { handleShow } = useContext(ModalContext);
+  const { handleShowModal } = useContext(ModalContext);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -58,6 +58,7 @@ const Checkout = () => {
 
   return (
     <div className="Container">
+      <ScrollIntoView />
       <CheckoutDetail></CheckoutDetail>
       <div className="CheckoutDetailTotal">
         <div className="CheckoutDetailTotalTitle">TOTAL</div>
@@ -107,7 +108,7 @@ const Checkout = () => {
             className="btn-primary-form"
             variant="primary"
             type="submit"
-            onClick={handleShow}
+            onClick={handleShowModal}
           >
             CONFIRMAR COMPRA
           </Button>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
+import Logo from "../../images/Logo.png";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
     >
       <div className="container-fluid">
         <NavLink to={"/"} className="navbar-brand" href="#">
-          LOGO
+          <img src={Logo} />
         </NavLink>
         <button
           className="navbar-toggler"

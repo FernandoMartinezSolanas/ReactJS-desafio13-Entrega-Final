@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 function CartWidget() {
   const { WidgetShow, handleClose, handleShow } = useContext(WidgetContext);
-
   const { cartProducts, calculeTotalPrice } = useContext(CartContext);
   const total = calculeTotalPrice();
 
@@ -27,7 +26,12 @@ function CartWidget() {
         >
           <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
         </svg>
-        <p id="carritoQ">{cartProducts.length}</p>
+        <p
+          id="carritoQ"
+          className={cartProducts.length > 0 ? "show" : "hidden"}
+        >
+          {cartProducts.length}
+        </p>
       </div>
       <Offcanvas
         show={WidgetShow}
@@ -42,11 +46,23 @@ function CartWidget() {
         <Offcanvas.Body>
           <Cart></Cart>
           <div className="CartTotal">
-            <div className="CartTotalPrice">
+            <div
+              className={
+                cartProducts.length > 0
+                  ? "CartTotalPrice-show"
+                  : "CartTotalPrice-hidden"
+              }
+            >
               <div>Total</div>
-              <div>{total}</div>
+              <div>ARS $ {total}</div>
             </div>
-            <button className="CartTotalBuy">
+            <button
+              className={
+                cartProducts.length > 0
+                  ? "CartTotalBuy-show"
+                  : "CartTotalBuy-hidden"
+              }
+            >
               <Link to={`/checkout`} onClick={handleClose}>
                 COMPRAR
               </Link>

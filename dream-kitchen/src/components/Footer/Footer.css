@@ -1,0 +1,49 @@
+footer {
+  width: 100%;
+  position: absolute;
+  height: 75px;
+  box-sizing: content-box;
+  color: #4d4a4a;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  font-family: "jost";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px -1px 5px #888;
+  margin-top: 75px;
+}
+
+footer .logoPequeno {
+  width: 150px;
+  height: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer .footerDatos {
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .footerDatos div {
+  display: flex;
+  flex-direction: column;
+  height: 75px;
+  margin: 0 10px 0 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footerDatos div .footerDatosTexto {
+  margin-bottom: 0%;
+  text-align: center;
+}
+
+footer .footerRedes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+}

@@ -13,7 +13,6 @@ const CartProvider = ({ children }) => {
   };
 
   const deleteProduct = (product) => {
-    console.log(product.id);
     setcartProducts(
       cartProducts.filter((cartProduct) => cartProduct.id !== product.id)
     );
@@ -32,7 +31,7 @@ const CartProvider = ({ children }) => {
   const increasequantity = (product) => {
     setcartProducts(
       cartProducts.map((e) =>
-        e.id === product.id && product.quantity >= 1
+        e.id === product.id && product.quantity >= 0
           ? { ...e, quantity: product.quantity + 1 }
           : e
       )
@@ -48,6 +47,10 @@ const CartProvider = ({ children }) => {
     return total;
   };
 
+  const emptyCartProducts = () => {
+    setcartProducts(cartProducts.splice(0, cartProducts.lenght));
+  };
+
   const data = {
     cartProducts,
     addProductToCart,
@@ -55,6 +58,7 @@ const CartProvider = ({ children }) => {
     calculeTotalPrice,
     reducequantity,
     increasequantity,
+    emptyCartProducts,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;

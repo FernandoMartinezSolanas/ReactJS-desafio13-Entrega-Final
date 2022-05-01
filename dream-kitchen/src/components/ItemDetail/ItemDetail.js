@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import Itemcount from "../ItemCount/itemcount";
 import "./ItemDetail.css";
 import CartContext from "../../context/cartcontext";
+import CloseButton from "react-bootstrap/CloseButton";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ data }) => {
   const { title, description, price, picture, stock, image } = data;
@@ -20,7 +22,12 @@ const ItemDetail = ({ data }) => {
         alt={picture}
       />
       <div className="card-body-detail">
-        <h5 className="card-title-detail">{title}</h5>
+        <div className="card-title-detail-close">
+          <h5 className="card-title-detail">{title}</h5>
+          <Link to={`/`}>
+            <CloseButton />
+          </Link>
+        </div>
         <p className="card-text-price-detail">PRECIO: ARS $ {price}</p>
         <p className="card-text-tarjeta-detail">
           💳 12 Cuotas sin interes de {Math.round(price / 12)}

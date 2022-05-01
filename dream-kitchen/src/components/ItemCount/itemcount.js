@@ -27,17 +27,17 @@ function ItemCount(props) {
   return (
     <div>
       <div className="Itemcount">
-        <button onClick={reduce} className="btn btn-primary quantity">
+        <button onClick={reduce} className="btn btn-primary-a quantity">
           {"-"}
         </button>
         <div className="quantity">{count}</div>
-        <button onClick={add} className="btn btn-primary">
+        <button onClick={add} className="btn btn-primary-a">
           {"+"}
         </button>
       </div>
       <div className="addcart">
         <button onClick={onAdd} className="add">
-          🛒 Añadir al carrito
+          🛒 Añadir
         </button>
       </div>
     </div>

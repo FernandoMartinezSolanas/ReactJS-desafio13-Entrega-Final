@@ -10,6 +10,8 @@ import ShopCategory from "./components/pages/ShopCategory";
 import { CartProvider } from "./context/cartcontext";
 import { WidgetProvider } from "./context/widgetcontext";
 import { ModalProvider } from "./context/modalcontext";
+import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -18,20 +20,26 @@ function App() {
         <ModalProvider>
           <CartProvider>
             <BrowserRouter>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Homepage></Homepage>}></Route>
-                <Route path="/shop" element={<Shop></Shop>}></Route>
-                <Route path="/checkout" element={<Checkout></Checkout>}></Route>
-                <Route
-                  path="/:category"
-                  element={<ShopCategory></ShopCategory>}
-                ></Route>
-                <Route
-                  path="/productos/:id"
-                  element={<ItemDetailContainer />}
-                ></Route>
-              </Routes>
+              <ScrollToTop>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Homepage></Homepage>}></Route>
+                  <Route path="/shop" element={<Shop></Shop>}></Route>
+                  <Route
+                    path="/checkout"
+                    element={<Checkout></Checkout>}
+                  ></Route>
+                  <Route
+                    path="/:category"
+                    element={<ShopCategory></ShopCategory>}
+                  ></Route>
+                  <Route
+                    path="/productos/:id"
+                    element={<ItemDetailContainer />}
+                  ></Route>
+                </Routes>
+                <Footer />
+              </ScrollToTop>
             </BrowserRouter>
           </CartProvider>
         </ModalProvider>
