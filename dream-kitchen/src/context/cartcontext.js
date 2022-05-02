@@ -3,18 +3,32 @@ import React, { createContext, useState } from "react";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cartProducts, setcartProducts] = useState([]);
+  const [cartProducts, setcartProducts] = useState(
+    JSON.parse(localStorage.getItem("productos")) || []
+  );
 
   const addProductToCart = (product) => {
     let exist = cartProducts.find(
       (cartProduct) => cartProduct.id === product.id
     );
-    !exist && setcartProducts((cartProducts) => [...cartProducts, product]);
+    if (!exist) {
+      setcartProducts((cartProducts) => [...cartProducts, product]);
+      localStorage.setItem(
+        "productos",
+        JSON.stringify([...cartProducts, product])
+      );
+    }
   };
 
   const deleteProduct = (product) => {
     setcartProducts(
       cartProducts.filter((cartProduct) => cartProduct.id !== product.id)
+    );
+    localStorage.setItem(
+      "productos",
+      JSON.stringify(
+        cartProducts.filter((cartProduct) => cartProduct.id !== product.id)
+      )
     );
   };
 
@@ -26,6 +40,16 @@ const CartProvider = ({ children }) => {
           : e
       )
     );
+    localStorage.setItem(
+      "productos",
+      JSON.stringify(
+        cartProducts.map((e) =>
+          e.id === product.id && product.quantity >= 1
+            ? { ...e, quantity: product.quantity - 1 }
+            : e
+        )
+      )
+    );
   };
 
   const increasequantity = (product) => {
@@ -34,6 +58,16 @@ const CartProvider = ({ children }) => {
         e.id === product.id && product.quantity >= 0
           ? { ...e, quantity: product.quantity + 1 }
           : e
+      )
+    );
+    localStorage.setItem(
+      "productos",
+      JSON.stringify(
+        cartProducts.map((e) =>
+          e.id === product.id && product.quantity >= 0
+            ? { ...e, quantity: product.quantity + 1 }
+            : e
+        )
       )
     );
   };
