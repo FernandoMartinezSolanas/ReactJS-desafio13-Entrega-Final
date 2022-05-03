@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "//ReactJS-desafio13-Entrega-Final/static/css/main.6f44050f.css",
+    "main.js": "//ReactJS-desafio13-Entrega-Final/static/js/main.fb83360b.js",
+    "static/media/cocina.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/cocina.7232ea0db99144db69ca.jpg",
+    "static/media/griferia.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/griferia.0bdbfae0360cfd6d6181.jpg",
+    "static/media/revestimiento.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/revestimiento.0da32a36d3d2da5b9513.jpg",
+    "static/media/mesadas.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/mesadas.0f3c3a9ffbf93ea257f2.jpg",
+    "static/media/SectionShop.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/SectionShop.6e2bed2bb974ca9271e8.jpg",
+    "static/media/Logo.png": "//ReactJS-desafio13-Entrega-Final/static/media/Logo.cf834431c02ba0b4f55a.png",
+    "static/media/porcelanato.jpg": "//ReactJS-desafio13-Entrega-Final/static/media/porcelanato.de89e8a7e619e274ce1a.jpg",
+    "index.html": "//ReactJS-desafio13-Entrega-Final/index.html",
+    "main.6f44050f.css.map": "//ReactJS-desafio13-Entrega-Final/static/css/main.6f44050f.css.map",
+    "main.fb83360b.js.map": "//ReactJS-desafio13-Entrega-Final/static/js/main.fb83360b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f44050f.css",
+    "static/js/main.fb83360b.js"
+  ]
+}
